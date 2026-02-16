@@ -15,7 +15,7 @@ const footerLinks = {
     { name: "Technologies", href: "/technologies" },
   ],
   programs: [
-    { name: "Full Stack Training", href: "/training" },
+    { name: "Training", href: "/training" },
     { name: "Internships", href: "/training" },
     { name: "webinars", href: "/training" },
     { name: "", href: "/training" },
