@@ -3,6 +3,8 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useEffect, useState } from "react";
+
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Services from "./pages/Services";
@@ -10,7 +12,9 @@ import Training from "./pages/Training";
 import Technologies from "./pages/Technologies";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
-import { useEffect, useState } from "react";
+
+
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -20,7 +24,7 @@ const SplashScreen = () => {
   return (
     <div style={styles.splash}>
       <img
-        src="/logo.jpeg"  //👉 Put your final Circlon logo inside /public/logo.png
+        src="/logo.jpeg"
         alt="Circlon Logo"
         style={styles.logo}
       />
@@ -36,7 +40,7 @@ const App = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 800) // 3 seconds splash
+    }, 800); // splash time
 
     return () => clearTimeout(timer);
   }, []);
@@ -49,7 +53,12 @@ const App = () => {
         <div style={{ backgroundColor: "#ffffff", minHeight: "100vh" }}>
           <Toaster />
           <Sonner />
+
           <BrowserRouter>
+            <ScrollToTop /> {/* ✅ Scroll Fix */}
+
+            
+
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/about" element={<About />} />
@@ -59,6 +68,7 @@ const App = () => {
               <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
+
           </BrowserRouter>
         </div>
       </TooltipProvider>
@@ -84,6 +94,6 @@ const styles: any = {
   logo: {
     width: "320px",
     height: "auto",
-    animation: "fadeIn 1.2s ease forwards",
+    animation: "fadeIn 3.2s ease forwards",
   },
 };
