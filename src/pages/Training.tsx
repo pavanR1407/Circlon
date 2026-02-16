@@ -21,34 +21,34 @@ const courses = [
     mode: "Online ",
     description: "Master Python backend development with Django/Flask and modern frontend technologies.",
     topics: ["Python Fundamentals", "Django/Flask", "REST APIs", "React Integration", "Database Design", "Deployment"],
-    price: "Contact Us",
-    popular: true,
+    price: "",
+    popular: false,
   },
   {
     title: "Full Stack Development with Java",
     duration: "3 or 6 Months",
     mode: "Online ",
     description: "Comprehensive Java development covering Spring Boot, Microservices, and modern frontend.",
-    topics: ["Java Core", "Spring Boot", "Microservices", "Angular/React", "MySQL", "AWS Basics"],
-    price: "Contact Us",
-    popular: false,
-  },
-  {
-    title: "MERN Stack Development",
-    duration: "3 Months",
-    mode: "Online ",
-    description: "Build full-stack applications with MongoDB, Express, React, and Node.js.",
-    topics: ["MongoDB", "Express.js", "React.js", "Node.js", "REST APIs", "Authentication"],
-    price: "Contact Us",
+    topics: ["Java Core", "Spring Boot", "Microservices", "Angular/React", "MySQL", "JDBC"],
+    price: "",
     popular: true,
   },
   {
-    title: "MEAN Stack Development",
+    title: "Data Science",
+    duration: "3 Months",
+    mode: "Online ",
+    description: "Learn Python, R, Statistics, Probability, Data Cleaning, Data Visualization, Exploratory Data Analysis (EDA), Machine Learning, Deep Learning, SQL, Big Data, Feature Engineering,",
+    topics: ["SQL", "Python", "R", "Deep learning", "Power BI ", "Natural Language processing"],
+    price: "",
+    popular: true,
+  },
+  {
+    title: "Web Designing",
     duration: "3 or 6 Months",
     mode: "Online ",
-    description: "Learn to build scalable applications with MongoDB, Express, Angular, and Node.js.",
-    topics: ["MongoDB", "Express.js", "Angular", "Node.js", "TypeScript", "RxJS"],
-    price: "Contact Us",
+    description: "Learn UI Design, UX Principles, Layout Design, Grid Systems, Color Theory, Typography, Wireframing, Prototyping.",
+    topics: ["Figma","Canva","Adobe XD","photoshop"],
+    price: "",
     popular: false,
   },
 ];
@@ -91,21 +91,21 @@ const Training = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-hero relative overflow-hidden">
+      <section className="pt-32 pb-20 bg-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-10 w-72 h-72 bg-sky rounded-full blur-3xl" />
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary rounded-full blur-3xl" />
         </div>
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground/90 text-sm font-medium mb-6">
+           <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-blue-900 text-sm font-medium mb-4">
               Training & Internships
             </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-blue-900 mb-6 leading-tight">
               Launch Your
-              <span className="bg-gradient-to-r from-sky to-primary bg-clip-text text-transparent"> Tech Career</span>
+              <span className="bg-gradient-to-r from-sky to-primary bg-clip-text text-pink-500"> Tech Career</span>
             </h1>
-            <p className="text-lg sm:text-xl text-primary-foreground/70 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-blue-900 leading-relaxed max-w-2xl mx-auto">
               Industry-focused training programs and internships designed to make you 
               job-ready with hands-on experience and expert mentorship.
             </p>
@@ -118,7 +118,7 @@ const Training = () => {
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-blue-900 text-sm font-medium mb-4">
               Training Programs
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-blue-900 mb-6">
@@ -139,7 +139,7 @@ const Training = () => {
               >
                 {course.popular && (
                   <div className="absolute -top-3 left-8">
-                    <span className="px-4 py-1 rounded-full bg-gradient-primary text-blue-900 text-xs font-semibold shadow-soft">
+                    <span className="px-4 py-1 rounded-full bg-blue-900 text-white text-xs font-semibold shadow-soft">
                       Most Popular
                     </span>
                   </div>
@@ -179,7 +179,9 @@ const Training = () => {
 
                 <div className="flex items-center justify-between pt-6 border-t border-border">
                   <div className="text-lg font-bold text-primary">{course.price}</div>
-                  <Button variant="default" asChild>
+                  <Button className="border border-blue-900 text-blue-900 bg-transparent 
+               hover:bg-blue-900 hover:text-white 
+               transition-all duration-300" asChild>
                     <Link to="/contact">Enroll Now</Link>
                   </Button>
                 </div>
@@ -194,12 +196,12 @@ const Training = () => {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-blue-900 text-sm font-medium mb-4">
                 Internship Program
               </span>
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6 leading-tight">
-                Gain Real Experience with
-                <span className="text-gradient"> Live Projects</span>
+              <h2 className="text-3xl sm:text-4xl font-bold text-blue-900 mb-6 leading-tight">
+                Gain Real Experience with <br />
+                <span className="text-red-500 "> Live Projects</span>
               </h2>
               <p className="text-lg text-blue-900 muted-foreground leading-relaxed mb-8">
                 Our internship cum training program bridges the gap between learning and 
@@ -210,13 +212,15 @@ const Training = () => {
               <div className="space-y-4 mb-8">
                 {benefits.slice(0, 4).map((benefit) => (
                   <div key={benefit} className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-blue-900 flex-shrink-0" />
                     <span className="text-blue-900">{benefit}</span>
                   </div>
                 ))}
               </div>
 
-              <Button variant="default" size="lg" asChild>
+              <Button className="border border-blue-900 text-blue-900 bg-transparent 
+               hover:bg-blue-900 hover:text-white 
+               transition-all duration-300" size="lg" asChild>
                 <Link to="/contact">
                   Apply for Internship
                   <ArrowRight className="w-5 h-5" />
@@ -231,8 +235,8 @@ const Training = () => {
                   className="group p-6 rounded-2xl bg-card border border-border hover:border-primary/30 hover:shadow-card
                    transition-all duration-300"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-gradient-primary group-hover:shadow-soft transition-all duration-300">
-                    <feature.icon className="w-6 h-6 text-blue-900 group-hover:text-blue-900 transition-colors" />
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-blue-900 group-hover:shadow-soft transition-all duration-300">
+                    <feature.icon className="w-6 h-6 text-blue-900 group-hover:text-white transition-colors" />
                   </div>
                   <h3 className="font-bold text-blue-900 mb-2">{feature.title}</h3>
                   <p className="text-sm text-blue-900 leading-relaxed">
@@ -282,13 +286,17 @@ const Training = () => {
               Join hundreds of students who have transformed their careers with TechSphere.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button variant="default" size="lg" asChild>
+              <Button className="border border-blue-900 text-blue-900 bg-transparent 
+               hover:bg-blue-900 hover:text-white 
+               transition-all duration-300" size="lg" asChild>
                 <Link to="/contact">
                   Get Started Today
                   <ArrowRight className="w-5 h-5" />
                 </Link>
               </Button>
-              <Button variant="outline" size="lg" asChild>
+              <Button className="border border-blue-900 text-blue-900 bg-transparent 
+               hover:bg-blue-900 hover:text-white 
+               transition-all duration-300"  size="lg" asChild>
                 <Link to="/technologies">View Technologies</Link>
               </Button>
             </div>

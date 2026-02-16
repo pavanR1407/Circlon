@@ -32,10 +32,10 @@ export function ServicesPreview() {
           <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
             Our Services
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Transforming Ideas Into
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-900 mb-6">
+            Transforming Ideas <br />Into
             <br />
-            <span className="text-gradient"> Digital Reality</span>
+            <span className="text-orange-400"> Digital Reality</span>
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
             We deliver end-to-end software development services that help businesses 
@@ -51,23 +51,29 @@ export function ServicesPreview() {
               className="group relative p-8 rounded-3xl bg-card border border-border hover:border-primary/30 shadow-card hover-lift"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {/* Icon */}
-              <div className="w-14 h-14 rounded-2xl bg-gradient-primary flex items-center justify-center mb-6 shadow-soft group-hover:scale-110 transition-transform duration-300">
-                <service.icon className="w-7 h-7 text-primary-foreground" />
+              <div className="w-14 h-14 rounded-2xl 
+                bg-blue-900 
+                flex items-center justify-center mb-6 
+                shadow-soft 
+                group-hover:bg-blue-900 
+                transition-all duration-300">
+                
+             <service.icon className="w-7 h-7 text-white" />
               </div>
 
+
               {/* Content */}
-              <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+              <h3 className="text-xl font-bold text-blue-900 mb-3 group-hover:text-primary transition-colors">
                 {service.title}
               </h3>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
+              <p className="text-blue-900 mb-6 leading-relaxed">
                 {service.description}
               </p>
 
               {/* Features */}
               <ul className="space-y-2">
                 {service.features.map((feature) => (
-                  <li key={feature} className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <li key={feature} className="flex items-center gap-2 text-sm text-blue-900">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary" />
                     {feature}
                   </li>
@@ -82,12 +88,20 @@ export function ServicesPreview() {
 
         {/* CTA */}
         <div className="text-center">
-          <Button variant="default" size="lg" asChild>
-            <Link to="/services">
-              Explore All Services
-              <ArrowRight className="w-5 h-5" />
+          <Button size="lg"
+          className="bg-blue-900 text-white 
+           hover:bg--600 
+           hover:scale-105 
+           hover:shadow-lg 
+           transition-all duration-300"
+
+              asChild >
+           <Link to="/services">
+            Explore All Services
+            <ArrowRight className="w-5 h-5" />
             </Link>
           </Button>
+
         </div>
       </div>
     </section>

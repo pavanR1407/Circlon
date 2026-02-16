@@ -37,26 +37,27 @@ export function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center">
-                <span className="text-black/70 font-bold text-lg">C</span>
+              <div className="w-10 h-10 rounded-xl bg-blue-900 flex items-center justify-center">
+                <span className="text-white font-bold text-lg">C</span>
               </div>
-              <span className="text-black/70 font-bold">
-                Cir<span className="text-sky">clon</span>
+              <span className="text-blue-900 font-bold">
+                Cir<span className="text-blue-900">clon</span>
               </span>
             </Link>
-            <p className="text-black/70 mb-6 max-w-sm leading-relaxed">
-              Where innovation meets excellence. Empowering individuals and businesses with cutting-edge digital skills and software solutions.
+            <p className="text-blue-900 mb-6 max-w-sm leading-relaxed">
+              Collect, Collaborate, Create .<br />
+            Empowering individuals and businesses with cutting-edge digital skills and software solutions.
             </p>
             <div className="space-y-3">
-              <a href="mailto:info@techsphere.com" className="flex items-center gap-3 text-black hover:text-sky transition-colors">
+              <a href="mailto:info@Circlon.com" className="flex items-center gap-3 text-blue-900 hover:text-sky transition-colors">
                 <Mail className="w-5 h-5" />
-                <span>info@techsphere.com</span>
+                <span>info@Circlon.com</span>
               </a>
-              <a href="tel:+1234567890" className="flex items-center gap-3 text-black hover:text-sky transition-colors">
+              <a href="tel:8925246499" className="flex items-center gap-3 text-blue-900 hover:text-sky transition-colors">
                 <Phone className="w-5 h-5" />
                 <span>8925246499</span>
               </a>
-              <div className="flex items-start gap-3 text-black/70">
+              <div className="flex items-start gap-3 text-blue-900">
                 <MapPin className="w-5 h-5 mt-0.5" />
                 <span>Bangalore <br />Karnataka</span>
               </div>
@@ -65,13 +66,13 @@ export function Footer() {
 
           {/* Company Links */}
           <div>
-            <h4 className="font-semibold text-black mb-6">Company</h4>
+            <h4 className="font-semibold text-blue-900 mb-6">Company</h4>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-black/70 hover:text-sky transition-colors"
+                    className="text-blue-900 hover:text-sky transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -82,13 +83,13 @@ export function Footer() {
 
           {/* Services Links */}
           <div>
-            <h4 className="font-semibold text-black mb-6">Services</h4>
+            <h4 className="font-semibold text-blue-900 mb-6">Services</h4>
             <ul className="space-y-3">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-black/70  hover:text-sky transition-colors"
+                    className="text-blue-900  hover:text-sky transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -99,13 +100,13 @@ export function Footer() {
 
           {/* Programs Links */}
           <div>
-            <h4 className="font-semibold text-black mb-6">Programs</h4>
+            <h4 className="font-semibold text-blue-900 mb-6">Programs</h4>
             <ul className="space-y-3">
               {footerLinks.programs.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-black/70 hover:text-sky transition-colors"
+                    className="text-blue-900 hover:text-sky transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -116,22 +117,29 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="py-6 border-t border-black/70 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-black/60 text-sm">
+        <div className="py-6 border-t border-blue-900 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-blue-900 text-sm">
             © {new Date().getFullYear()} Circlon . All rights reserved.
           </p>
           <div className="flex items-center gap-4">
             {socialLinks.map((social) => (
-              <a
-              target="_blank"
-              rel="noopener noreferrer"
-              key={social.label}
-              href={social.href}
-              aria-label={social.label}
-              className="w-10 h-10 rounded-lg bg-black/70 flex items-center justify-center text-primary-/70 hover:bg-sky hover:text-primary-foreground transition-all duration-300"
-            >
-              <social.icon className="w-5 h-5" />
-              </a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          key={social.label}
+          href={social.href}
+          aria-label={social.label}
+          className="w-10 h-10 rounded-lg 
+             bg-white 
+             flex items-center justify-center 
+             text-blue-900
+             hover:bg-blue-900 hover:text-white
+             transition-all duration-300"
+>
+  <social.icon className="w-5 h-5" />
+</a>
+
+
             ))}
           </div>
         </div>

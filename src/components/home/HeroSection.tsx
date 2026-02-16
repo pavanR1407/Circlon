@@ -8,8 +8,9 @@ export function HeroSection() {
   const images = [
     "/hero1.jpg",
     "/hero2.jpg",
-   // "/hero3.jpg",
+    "/hero3.jpg",
     "/hero4.jpg",
+    
   ];
 
   const [current, setCurrent] = useState(0);
@@ -39,91 +40,84 @@ export function HeroSection() {
       </div>
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/60 z-0" />
+      <div className="absolute inset-0 bg-white/10 z-0" />
 
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10 z-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-sky rounded-full blur-3xl animate-pulse-soft" />
+        <div className="absolute top-20 left-10 w-20 h-20 bg-sky rounded-full blur-3xl animate-pulse-soft" />
         <div
-          className="absolute bottom-20 right-10 w-96 h-96 bg-primary rounded-full blur-3xl animate-pulse-soft"
+          className="absolute bottom-20 right-10 w-50 h-50 bg-sky rounded-full  animate-pulse-soft"
           style={{ animationDelay: "1s" }}
         />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-sky/50 rounded-full blur-3xl" />
+       
       </div>
 
       {/* Grid Overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:60px_60px] z-0" />
+
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10 pt-24">
         <div className="max-w-5xl mx-auto text-center">
 
-          {/* Badge */}
          
 
           {/* Main Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight animate-fade-in-up stagger-1">
-            Collect , Collaborate
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-indigo-400
+
+">Collect, </span> 
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-800 to-orange-400
+
+
+">Collaborate</span>
             <br />
-            
-              Create
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-emerald-400
+
+" >Create</span>
+              
             
           </h1>
 
           {/* Subheadline */}
-          <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-in-up stagger-2">
+          <p className="text-lg sm:text-xl text-blue-900 max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-in-up stagger-2">
             Transform your career with industry-leading software development services,
             comprehensive training programs, and hands-on internship opportunities.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-in-up stagger-3">
-            <Button variant="hero" size="lg" asChild>
-              <Link to="/training">
-                Enroll Now
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-            </Button>
-            <Button variant="heroOutline" size="lg" asChild>
-              <Link to="/contact">Contact Us</Link>
-            </Button>
-          </div>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-in-up stagger-3">
+  
+  <Button
+    size="lg"
+    className="border border-blue-900 text-blue-900 bg-transparent 
+               hover:bg-blue-900 hover:text-white 
+               transition-all duration-300 flex items-center gap-2"
+    asChild
+  >
+    <Link to="/training">
+      Enroll Now
+      <ArrowRight className="w-5 h-5" />
+    </Link>
+  </Button>
 
-          {/* Feature Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-fade-in-up stagger-4">
-            
-            <div className="group p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:border-sky/40 transition-all duration-300">
-              <div className="w-12 h-12 rounded-xl bg-blue-900 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <Code2 className="w-6 h-6 text-white" />
-              </div>
-              <h3 className="text-white font-semibold mb-2">Software Development</h3>
-              <p className="text-white/80 text-sm">
-                Custom web and mobile solutions built with cutting-edge technologies
-              </p>
-            </div>
+  <Button
+    size="lg"
+    className="border border-blue-900 text-blue-900 bg-transparent 
+               hover:bg-blue-900 hover:text-white 
+               transition-all duration-300"
+    asChild
+  >
+    <Link to="/contact">Contact Us</Link>
+  </Button>
 
-            <div className="group p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:border-sky/40 transition-all duration-300">
-              <div className="w-12 h-12 rounded-xl bg-blue-900 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <GraduationCap className="w-6 h-6 text-white" />
-              </div>
-              <h3 className="mb-2 font-semibold text-white">Training Programs</h3>
-              <p className="text-white/80 text-sm">
-                Industry-focused courses in Full Stack, MERN, and MEAN technologies
-              </p>
-            </div>
+</div>
 
-            <div className="group p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:border-sky/40 transition-all duration-300">
-              <div className="w-12 h-12 rounded-xl bg-blue-900 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <Rocket className="w-6 h-6 text-white" />
-              </div>
-              <h3 className="text-lg font-semibold text-white mb-2">Internships</h3>
-              <p className="text-white/80 text-sm">
-                Hands-on experience with live projects and expert mentorship
-              </p>
-            </div>
+
+          
+          
 
           </div>
         </div>
-      </div>
+      
 
       {/* Bottom Gradient */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-10" />

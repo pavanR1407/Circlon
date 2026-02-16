@@ -4,7 +4,6 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
@@ -42,29 +41,22 @@ export function Navbar() {
     >
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between">
+          
           {/* Logo */}
-      <Link to="/" className="flex items-center gap-2 group">
-  <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center shadow-soft group-hover:shadow-hover transition-all duration-300">
-    <span className="text-primary-foreground font-bold text-xl">C</span>
-  </div>
+          <Link to="/" className="flex items-center gap-2 group">
+            <div className="w-10 h-10 rounded-xl bg-blue-900 flex items-center justify-center shadow-soft group-hover:shadow-hover transition-all duration-300">
+              <span className="text-white font-bold text-xl">C</span>
+            </div>
 
-    {/* TEXT CONTAINER */}
-    <div className="flex flex-col leading-tight">
-      <span
-       className={cn(
-        "text-xl font-bold transition-colors duration-300",
-        isScrolled ? "text-foreground" : "text-foreground"
-        )}
-     ><span className="text-xl font-bold text-white/70">
-                Cir<span className="text-sky">clon</span>
+            <div className="flex flex-col leading-tight">
+              <span className="text-xl font-bold text-blue-900">
+                Cir<span className="text-blue-900">clon</span>
               </span>
-      </span>
-
-      <span className="text-[13px] font-semibold text-muted-foreground">
-   Collect,Colaborate,Create
-     </span>
-    </div>
-    </Link>
+              <span className="text-[13px] font-semibold text-blue-900">
+                Collect, Collaborate, Create
+              </span>
+            </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-1">
@@ -75,8 +67,8 @@ export function Navbar() {
                 className={cn(
                   "px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200",
                   location.pathname === link.href
-                    ? "text-primary bg-primary/10"
-                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                    ? "text-blue-900 bg-blue-100"
+                    : "text-muted-foreground hover:text-blue-900"
                 )}
               >
                 {link.name}
@@ -84,9 +76,15 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* CTA Button */}
+          {/* Desktop CTA Button */}
           <div className="hidden lg:flex items-center gap-4">
-            <Button variant="default" size="default" asChild>
+            <Button
+              size="default"
+              className="border border-blue-900 text-blue-900 bg-transparent 
+                         hover:bg-blue-900 hover:text-white 
+                         transition-all duration-300"
+              asChild
+            >
               <Link to="/contact">Get Started</Link>
             </Button>
           </div>
@@ -94,12 +92,12 @@ export function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 rounded-lg hover:bg-muted transition-colors"
+            className="lg:hidden p-2 rounded-lg hover:bg-blue-100 transition-colors"
           >
             {isOpen ? (
-              <X className="w-6 h-6 text-foreground" />
+              <X className="w-6 h-6 text-blue-900" />
             ) : (
-              <Menu className="w-6 h-6 text-foreground" />
+              <Menu className="w-6 h-6 text-blue-900" />
             )}
           </button>
         </div>
@@ -111,28 +109,38 @@ export function Navbar() {
             isOpen ? "max-h-96 mt-4" : "max-h-0"
           )}
         >
-          <div className="bg-card rounded-2xl shadow-card p-4 space-y-2">
+          <div className="bg-white rounded-2xl shadow-card p-4 space-y-2">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.href}
                 className={cn(
-                  "block px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200",
+                  "block px-4 py-3 rounded-lg font-medium transition-all duration-200",
                   location.pathname === link.href
-                    ? "text-primary bg-primary/10"
-                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                    ? "text-blue-900 bg-blue-100"
+                    : "text-blue-900 hover:bg-blue-50"
                 )}
               >
                 {link.name}
               </Link>
             ))}
+
+            {/* Mobile CTA Button */}
             <div className="pt-2">
-              <Button variant="default" size="default" className="w-full" asChild>
-                <Link to="/contact">Get Started</Link>
-              </Button>
+         <Button
+          size="default"
+          className="w-full border border-blue-900 bg-blue-900 text-white
+             hover:bg-blue-900 hover:border-blue-900 hover:text-white
+             transition-none"
+               asChild>
+            <Link to="/contact">Get Started</Link>
+        </Button>
+
+
             </div>
           </div>
         </div>
+
       </div>
     </nav>
   );

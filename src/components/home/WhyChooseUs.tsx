@@ -40,16 +40,16 @@ export function WhyChooseUs() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
           <div>
-            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-blue-900 text-sm font-medium mb-4">
               Why Choose Us
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-blue-900 mb-6 leading-tight">
               Your Success Is
               <br />
-              <span className="text-gradient">Our Priority</span>
+              <span className="text-emerald-400">Our Priority</span>
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              At TechSphere, we don't just teach technology—we transform careers. 
+            <p className="text-lg text-blue-900 leading-relaxed mb-8">
+              At Circlon, we don't just teach technology—we transform careers. 
               Our unique approach combines theoretical knowledge with practical 
               application, ensuring you're ready for the real world.
             </p>
@@ -57,16 +57,16 @@ export function WhyChooseUs() {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6">
               <div className="text-center">
-                <div className="text-3xl sm:text-4xl font-bold text-gradient mb-1">20 +</div>
-                <div className="text-sm text-muted-foreground">Students Trained</div>
+                <div className="text-3xl sm:text-4xl font-bold text-blue-900 mb-1">20 +</div>
+                <div className="text-sm text-blue-900">Students Trained</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl sm:text-4xl font-bold text-gradient mb-1">5+</div>
-                <div className="text-sm text-muted-foreground">Projects Delivered</div>
+                <div className="text-3xl sm:text-4xl font-bold text-blue-900 mb-1">5+</div>
+                <div className="text-sm text-blue-900">Projects Delivered</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl sm:text-4xl font-bold text-gradient mb-1">98%</div>
-                <div className="text-sm text-muted-foreground">Happy customers</div>
+                <div className="text-3xl sm:text-4xl font-bold text-blue-900 mb-1">98%</div>
+                <div className="text-sm text-blue-900">Happy customers</div>
               </div>
             </div>
           </div>
@@ -75,18 +75,21 @@ export function WhyChooseUs() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {reasons.map((reason, index) => (
               <div
-                key={reason.title}
-                className="group p-6 rounded-2xl bg-card border border-border hover:border-primary/30 hover:shadow-card transition-all duration-300"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-gradient-primary group-hover:shadow-soft transition-all duration-300">
-                  <reason.icon className="w-5 h-5 text-primary group-hover:text-primary-foreground transition-colors" />
-                </div>
-                <h3 className="font-semibold text-foreground mb-2">{reason.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {reason.description}
-                </p>
-              </div>
+  key={reason.title}
+  className="group p-6 rounded-2xl bg-card border border-border hover:border-blue-900 hover:shadow-card transition-all duration-300"
+  style={{ animationDelay: `${index * 0.1}s` }}
+>
+  <div className="w-11 h-11 rounded-xl bg-blue/10 flex items-center justify-center mb-4 group-hover:bg-blue-900 group-hover:shadow-soft transition-all duration-300">
+    <reason.icon className="w-5 h-5 text-blue-900 group-hover:text-primary-foreground transition-colors" />
+  </div>
+  <h3 className="font-semibold text-blue-900 mb-2 group-hover:!text-blue-900 transition-colors">
+    {reason.title}
+  </h3>
+  <p className="text-sm text-blue-900 leading-relaxed group-hover:!text-blue-900 transition-colors">
+    {reason.description}
+  </p>
+</div>
+
             ))}
           </div>
         </div>

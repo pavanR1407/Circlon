@@ -19,19 +19,19 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email Us",
-    details: "info@techsphere.com",
-    description: "We respond within 24 hours",
+    details: "info@circlon.com",
+    
   },
   {
     icon: Phone,
     title: "Call Us",
     details: "8925246499",
-    description: "Mon-Fri,\n9am-6pm",
+    
   },
   {
     icon: MapPin,
     title: "Visit Us",
-    details: "TechSphere ",
+    details: "Circlon Technologies ",
     description: "Bangalore, karnataka ",
   },
 ];
@@ -97,21 +97,21 @@ const Contact = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-hero relative overflow-hidden">
+      <section className="pt-32 pb-20 bg-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-10 w-72 h-72 bg-sky rounded-full blur-3xl" />
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary rounded-full blur-3xl" />
         </div>
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground/90 text-sm font-medium mb-6">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-blue-900 text-sm font-medium mb-4">
               Get in Touch
             </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-blue-900 mb-6 leading-tight">
               Let's Start a
-              <span className="bg-gradient-to-r from-sky to-primary bg-clip-text text-transparent"> Conversation</span>
+              <span className="bg-gradient-to-r from-sky to-primary bg-clip-text text-amber-800"> Conversation</span>
             </h1>
-            <p className="text-lg sm:text-xl text-primary-foreground/70 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-blue-900 leading-relaxed max-w-2xl mx-auto">
               Whether you're interested in our training programs, need software 
               development services, or just want to say hello, we'd love to hear from you.
             </p>
@@ -139,10 +139,10 @@ const Contact = () => {
                 {contactInfo.map((info) => (
                   <div
                     key={info.title}
-                    className="flex items-start gap-4 p-4 rounded-2xl bg-card border border-border hover:border-primary/30 hover:shadow-card transition-all duration-300"
+                    className="flex items-start gap-4 p-4 rounded-2xl bg-card border border-border hover:border-blue-900 hover:shadow-card transition-all duration-300"
                   >
                     <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <info.icon className="w-5 h-5 text-primary" />
+                      <info.icon className="w-5 h-5 text-blue-900" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-blue-900">{info.title}</h3>
@@ -186,7 +186,7 @@ const Contact = () => {
                       <Input
                         id="name"
                         name="name"
-                        placeholder="John "
+                        placeholder=" "
                         value={formData.name}
                         onChange={handleChange}
                         required
@@ -199,7 +199,7 @@ const Contact = () => {
                         id="email"
                         name="email"
                         type="email"
-                        placeholder="john@example.com"
+                        placeholder=""
                         value={formData.email}
                         onChange={handleChange}
                         required
@@ -215,9 +215,10 @@ const Contact = () => {
                         id="phone"
                         name="phone"
                         type="tel"
-                        placeholder="+1(234)567-890"
+                        placeholder=""
                         value={formData.phone}
                         onChange={handleChange}
+                        required
                         className="h-12"
                       />
                     </div>
@@ -226,10 +227,10 @@ const Contact = () => {
                       <Input
                         id="subject"
                         name="subject"
-                        placeholder="How can we help?"
+                        placeholder=""
                         value={formData.subject}
                         onChange={handleChange}
-                        required
+                        
                         className="h-12"
                       />
                     </div>
@@ -251,9 +252,10 @@ const Contact = () => {
 
                   <Button
                     type="submit"
-                    variant="default"
+                    
                     size="lg"
-                    className="w-full"
+                    className="border border-blue-900 text-blue-900 bg-transparent 
+               hover:bg-blue-900 hover:text-white w-full"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (
