@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
@@ -43,10 +42,13 @@ export function Navbar() {
         <div className="flex items-center justify-between">
           
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-xl bg-blue-900 flex items-center justify-center shadow-soft group-hover:shadow-hover transition-all duration-300">
-              <span className="text-white font-bold text-xl">C</span>
-            </div>
+          <Link to="/" className="flex items-center gap-3">
+          <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-md">
+            <img
+              src="/Circlon.png"   // 🔁 Change this name if your file name is different
+              alt="Circlon Logo"
+              className="h-10 w-auto object-contain"
+            /></div>
 
             <div className="flex flex-col leading-tight">
               <span className="text-xl font-bold text-blue-900">
@@ -74,19 +76,6 @@ export function Navbar() {
                 {link.name}
               </Link>
             ))}
-          </div>
-
-          {/* Desktop CTA Button */}
-          <div className="hidden lg:flex items-center gap-4">
-            <Button
-              size="default"
-              className="border border-blue-900 text-blue-900 bg-transparent 
-                         hover:bg-blue-900 hover:text-white 
-                         transition-all duration-300"
-              asChild
-            >
-              <Link to="/contact">Get Started</Link>
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -124,20 +113,6 @@ export function Navbar() {
                 {link.name}
               </Link>
             ))}
-
-            {/* Mobile CTA Button */}
-            <div className="pt-2">
-         <Button
-          size="default"
-          className="w-full border border-blue-900 bg-blue-900 text-white
-             hover:bg-blue-900 hover:border-blue-900 hover:text-white
-             transition-none"
-               asChild>
-            <Link to="/contact">Get Started</Link>
-        </Button>
-
-
-            </div>
           </div>
         </div>
 
