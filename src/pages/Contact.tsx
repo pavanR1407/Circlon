@@ -210,7 +210,7 @@ const Contact = () => {
 
                   <div className="grid sm:grid-cols-2 gap-6 text-blue-900">
                     <div className="space-y-2">
-                      <Label htmlFor="phone">Phone Number</Label>
+                      <Label htmlFor="phone">Phone Number *</Label>
                       <Input
                         id="phone"
                         name="phone"
@@ -222,22 +222,11 @@ const Contact = () => {
                         className="h-12"
                       />
                     </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="subject">Subject *</Label>
-                      <Input
-                        id="subject"
-                        name="subject"
-                        placeholder=""
-                        value={formData.subject}
-                        onChange={handleChange}
-                        
-                        className="h-12"
-                      />
-                    </div>
+                    
                   </div>
 
                   <div className="space-y-2 text-blue-900/100">
-                    <Label htmlFor="message">Message *</Label>
+                    <Label htmlFor="message">Description *</Label>
                     <Textarea
                       id="message"
                       name="message"
